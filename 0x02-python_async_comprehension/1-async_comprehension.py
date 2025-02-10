@@ -6,4 +6,4 @@ from typing import List
 
 async def async_comprehension() -> List[float]:
     "collects 10 random numbers using async comprehensing over async_generator"
-    return [i async for i in async_g()]
+    return await asyncio.shield([i async for i in async_g()])
